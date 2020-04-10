@@ -1,0 +1,37 @@
+<div class="sidebar" data-background-color="white" data-active-color="danger">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a  class="simple-text">
+        <!-- <img src="../../../assets/img/icon.png" style="height:66px;"> -->
+        <img src="../../../assets/img/logo.png" style="height:100px;">
+      </a>
+    </div>
+    <ul class="nav">
+      <li class="" (click)="changeColor0()">
+        <a id="cs0" [routerLink]="['/query1']" class="nav-link">
+          <i class="fa fa-list-ol"></i>
+          RANK
+        </a>
+      </li>
+      <li *ngIf="isSalesperson" class="" (click)="changeColor1()">
+        <a id="cs1" [routerLink]="['/query4']" class="nav-link">
+          <i class="fa fa-users"></i>
+          TEAM
+        </a>
+      </li>
+      <li *ngIf="isStoreManager" class="" (click)="changeColor2()">
+        <a id="cs2" [routerLink]="['/query2']" class="nav-link">
+          <i class="fa fa-vcard"></i>
+          PLAYER
+        </a>
+      </li>
+
+      <li *ngIf="isRegionManager" class="" (click)="changeColor3()">
+        <a id="cs3" [routerLink]="['/query7']" class="nav-link">
+          <i class="fa fa-trophy"></i>
+          EASTERN / WESTERN
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

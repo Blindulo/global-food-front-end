@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/query1']">Team Rank</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " [routerLink]="['/query5']">Highest Rank</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="col-md-12">
+        <form #QueryForm="ngForm" (ngSubmit)="onSubmit(QueryForm)">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Search Team by Rank</h4>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" name="rank" #queryRank="ngModel" [(ngModel)]="query.rank">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- MySQL -->
+      <div class="col-md-4 super-container">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">MySQL</h4>
+            <p class="category">Team by rank</p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-striped">
+              <thead>
+                <th style="width:40%">Date</th>
+                <th style="width:30%">Team</th>
+                <th style="width:30%">Rank</th>
+  
+              </thead>
+              <tbody>
+                <tr *ngFor="let mysqlResult of mysqlResults">
+                  <td>{{mysqlResult.stDate}}</td>
+                  <td>{{mysqlResult.teamAbbr}}</td>
+                  <td>{{query.rank}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- MomgoDB -->
+      <div class="col-md-4 super-container">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">MongoDB</h4>
+            <p class="category">Team by rank</p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-striped">
+              <thead>
+                <th style="width:40%">Date</th>
+                <th style="width:30%">Team</th>
+                <th style="width:30%">Rank</th>
+  
+              </thead>
+              <tbody>
+                <tr *ngFor="let mongodbResult of mongodbResults">
+                  <td>{{mongodbResult.stDate}}</td>
+                  <td>{{mongodbResult.teamAbbr}}</td>
+                  <td>{{query.rank}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+          <!-- Neo4j -->
+          <div class="col-md-4 super-container">
+              <div class="card">
+                <div class="header">
+                  <h4 class="title">Neo4j</h4>
+                  <p class="category">Team by rank</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                  <table class="table table-striped">
+                    <thead>
+                      <th style="width:40%">Date</th>
+                      <th style="width:30%">Team</th>
+                      <th style="width:30%">Rank</th>
+        
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let neo4jResult of neo4jResults">
+                        <td>{{neo4jResult.stDate}}</td>
+                        <td>{{neo4jResult.teamAbbr}}</td>
+                        <td>{{query.rank}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+  

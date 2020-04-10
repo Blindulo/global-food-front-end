@@ -1,0 +1,141 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/query2']">Match Performance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/query6']">Highest Perfromance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/query3']">Contribution</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/query11']">Average Points</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-12">
+        <form #QueryForm="ngForm" (ngSubmit)="onSubmit(QueryForm)">
+  
+          <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Search Team by Rank</h4>
+                  </div>
+              <div class="col-md-4">
+                <label for="name">Player Name</label>
+                <input type="text" class="form-control" name="player" #salespersonName="ngModel"
+                  [(ngModel)]="query.player">
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="name">Performance</label>
+                <select class="form-control" name="performance" #queryRank="ngModel" [(ngModel)]="query.performance">
+                  <option value="playPTS">Points</option>
+                  <option value="playAST">Assist</option>
+                  <option value="play2PA">Two Point Attempts</option>
+                  <option value="play2PM">Two Point Shots</option>
+                  <option value="play3PA">Three Point Attempts</option>
+                  <option value="play3PM">Three Point Shots</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-2">
+            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+          </div>
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- MySQL -->
+      <div class="col-md-4 super-container">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">MySQL</h4>
+            <p class="category">Team by rank</p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-striped">
+              <thead>
+                <th style="width:25%">Date</th>
+                <th style="width:25%">Player</th>
+                <th style="width:25%">Opponent</th>
+                <th style="width:25%">Max</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mysqlResult of mysqlResults">
+                  <td>{{mysqlResult.gmDate}}</td>
+                  <td>{{query.player}}</td>
+                  <td>{{mysqlResult.opptAbbr}}</td>
+                  <td>{{mysqlResult.max}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- MomgoDB -->
+      <div class="col-md-4 super-container">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">MongoDB</h4>
+            <p class="category">Team by rank</p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-striped">
+              <thead>
+                  <th style="width:25%">Player</th>
+                  <th style="width:25%">Max {{query.performance}}</th>
+  
+              </thead>
+              <tbody>
+                <tr *ngFor="let mongodbResult of mongodbResults">
+                    <td>{{query.player}}</td>
+                    <td>{{mongodbResult.max}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Neo4j -->
+      <div class="col-md-4 super-container">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Neo4j</h4>
+            <p class="category">Team by rank</p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-striped">
+              <thead>
+                  <th style="width:25%">Date</th>
+                  <th style="width:25%">Player</th>
+                  <th style="width:25%">Opponent</th>
+                  <th style="width:25%">Max</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let neo4jResult of neo4jResults"> 
+                    <td>{{neo4jResult.gmDate}}</td>
+                    <td>{{query.player}}</td>
+                    <td>{{neo4jResult.opptAbbr}}</td>
+                    <td>{{neo4jResult.max}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+  </div>
+</div>
