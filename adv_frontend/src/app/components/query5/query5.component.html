@@ -3,10 +3,10 @@
     <div class="col-md-12">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link " [routerLink]="['/query1']">Team Rank</a>
+          <a class="nav-link " [routerLink]="['/query1']">Countries</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/query5']">Highest Rank</a>
+          <a class="nav-link active" [routerLink]="['/query5']">Localities</a>
         </li>
       </ul>
     </div>
@@ -16,9 +16,45 @@
         <div class="form-group">
           <div class="row">
             <div class="col-md-12">
-              <h4>Highest rank</h4>
+              <h4>Search Food Average Price in All Localities</h4>
             </div>
+
             <div class="col-md-4">
+              <label for="name">Country</label>
+              <select class="form-control" name="team" #queryRank="ngModel" [(ngModel)]="query.team">
+                <option value="ATL">Atlanta Hawks</option>
+                <option value="BOS">Boston Celtics</option>
+                <option value="BKN">Brooklyn Nets</option>
+                <option value="CHA">Charlotte Hornets</option>
+                <option value="CHI">Chicago Bulls</option>
+                <option value="CLE">Cleveland Cavaliers</option>
+                <option value="DAL">Dallas Mavericks</option>
+                <option value="DEN">Denver Nuggets</option>
+                <option value="DET">Detroit Pistons</option>
+                <option value="GS">Golden State Warriors</option>
+                <option value="HOU">Houston Rockets</option>
+                <option value="IND">Indiana Pacers</option>
+                <option value="LAC">Los Angeles Clippers</option>
+                <option value="LAL">Los Angeles Lakers</option>
+                <option value="MEM">Memphis Grizzlies</option>
+                <option value="MIA">Miami Heat</option>
+                <option value="MIL">Milwaukee Bucks</option>
+                <option value="MIN">Minnesota Timberwolves</option>
+                <option value="NO">New Orleans Pelicans</option>
+                <option value="NY">New York Knicks</option>
+                <option value="OKC">Oklahoma City Thunder</option>
+                <option value="ORL">Orlando Magic</option>
+                <option value="PHI">Philadelphia 76ers</option>
+                <option value="PHO">Phoenix Suns</option>
+                <option value="POR">Portland Trail Blazers</option>
+                <option value="SAC">Sacramento Kings</option>
+                <option value="SA">San Antonio Spurs</option>
+                <option value="TOR">Toronto Raptors</option>
+                <option value="UTA">Utah Jazz</option>
+                <option value="WAS">Washington Wizards</option>
+              </select>
+
+              <label for="name">Food</label>
               <select class="form-control" name="team" #queryRank="ngModel" [(ngModel)]="query.team">
                 <option value="ATL">Atlanta Hawks</option>
                 <option value="BOS">Boston Celtics</option>
@@ -52,11 +88,13 @@
                 <option value="WAS">Washington Wizards</option>
               </select>
             </div>
-            <div class="col-md-2">
-              <input type="submit" value="Submit" class="btn btn-primary btn-block">
-            </div>
+           
           </div>
+          
         </div>
+        <div class="col-md-2">
+            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+          </div>
       </form>
     </div>
     <br>

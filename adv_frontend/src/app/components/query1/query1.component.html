@@ -3,10 +3,10 @@
       <div class="col-md-12">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/query1']">Team Rank</a>
+            <a class="nav-link active" [routerLink]="['/query1']">Countries</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " [routerLink]="['/query5']">Highest Rank</a>
+            <a class="nav-link " [routerLink]="['/query5']">Localities</a>
           </li>
         </ul>
       </div>
@@ -16,9 +16,10 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-12">
-                <h4>Search Team by Rank</h4>
+                <h4>Search Food Average Price in All Countries</h4>
               </div>
               <div class="col-md-4">
+                <label for="name">Food</label>
                 <select class="form-control" name="rank" #queryRank="ngModel" [(ngModel)]="query.rank">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -37,11 +38,12 @@
                   <option value="15">15</option>
                 </select>
               </div>
-              <div class="col-md-2">
-                <input type="submit" value="Submit" class="btn btn-primary btn-block">
-              </div>
+              
             </div>
           </div>
+          <div class="col-md-2">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              </div>
         </form>
       </div>
       <br>
@@ -53,21 +55,20 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MySQL</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Price by rank</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                <th style="width:40%">Date</th>
-                <th style="width:30%">Team</th>
-                <th style="width:30%">Rank</th>
+                <th style="width:60%">Country</th>
+                <th style="width:40%">Average Price</th>
   
               </thead>
               <tbody>
                 <tr *ngFor="let mysqlResult of mysqlResults">
                   <td>{{mysqlResult.stDate}}</td>
                   <td>{{mysqlResult.teamAbbr}}</td>
-                  <td>{{query.rank}}</td>
+                  <!-- <td>{{query.rank}}</td> -->
                 </tr>
               </tbody>
             </table>
@@ -79,21 +80,23 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MongoDB</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Price by rank</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                <th style="width:40%">Date</th>
+                <!-- <th style="width:40%">Date</th>
                 <th style="width:30%">Team</th>
-                <th style="width:30%">Rank</th>
+                <th style="width:30%">Rank</th> -->
+                <th style="width:60%">Country</th>
+                <th style="width:40%">Average Price</th>
   
               </thead>
               <tbody>
                 <tr *ngFor="let mongodbResult of mongodbResults">
                   <td>{{mongodbResult.stDate}}</td>
                   <td>{{mongodbResult.teamAbbr}}</td>
-                  <td>{{query.rank}}</td>
+                  <!-- <td>{{query.rank}}</td> -->
                 </tr>
               </tbody>
             </table>
@@ -105,21 +108,23 @@
               <div class="card">
                 <div class="header">
                   <h4 class="title">Neo4j</h4>
-                  <p class="category">Team by rank</p>
+                  <p class="category">Price by rank</p>
                 </div>
                 <div class="content table-responsive table-full-width">
                   <table class="table table-striped">
                     <thead>
-                      <th style="width:40%">Date</th>
+                      <!-- <th style="width:40%">Date</th>
                       <th style="width:30%">Team</th>
-                      <th style="width:30%">Rank</th>
+                      <th style="width:30%">Rank</th> -->
+                      <th style="width:60%">Country</th>
+                      <th style="width:40%">Average Price</th>
         
                     </thead>
                     <tbody>
                       <tr *ngFor="let neo4jResult of neo4jResults">
                         <td>{{neo4jResult.stDate}}</td>
                         <td>{{neo4jResult.teamAbbr}}</td>
-                        <td>{{query.rank}}</td>
+                        <!-- <td>{{query.rank}}</td> -->
                       </tr>
                     </tbody>
                   </table>

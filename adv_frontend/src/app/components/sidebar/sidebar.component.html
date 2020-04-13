@@ -9,29 +9,30 @@
     <ul class="nav">
       <li class="" (click)="changeColor0()">
         <a id="cs0" [routerLink]="['/query1']" class="nav-link">
-          <i class="fa fa-list-ol"></i>
-          RANK
+          <!-- <i class="fa fa-list-ol"></i> -->
+          <i class="fa fa-globe"></i>
+          PLACE
         </a>
       </li>
       <li *ngIf="isSalesperson" class="" (click)="changeColor1()">
         <a id="cs1" [routerLink]="['/query4']" class="nav-link">
-          <i class="fa fa-users"></i>
-          TEAM
+          <i class="fa fa-clock-o"></i>
+          TIME
         </a>
       </li>
       <li *ngIf="isStoreManager" class="" (click)="changeColor2()">
         <a id="cs2" [routerLink]="['/query2']" class="nav-link">
-          <i class="fa fa-vcard"></i>
-          PLAYER
+          <i class="fa fa-leaf"></i>
+          COMMODITY
         </a>
       </li>
 
-      <li *ngIf="isRegionManager" class="" (click)="changeColor3()">
+      <!-- <li *ngIf="isRegionManager" class="" (click)="changeColor3()">
         <a id="cs3" [routerLink]="['/query7']" class="nav-link">
           <i class="fa fa-trophy"></i>
           EASTERN / WESTERN
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>
