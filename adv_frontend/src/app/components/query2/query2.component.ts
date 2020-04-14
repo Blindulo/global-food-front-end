@@ -15,12 +15,7 @@ export class Query2Component implements OnInit {
   neo4jResults: Result[];
   performance:any;
   query: Query = {
-    team: '',
-    data: '',
-    player: '',
-    performance: 'Performance',
-    conf: '',
-    time: '',
+    product_name: ''
   }
   constructor(
     private httpService: HttpService,
@@ -30,14 +25,16 @@ export class Query2Component implements OnInit {
   }
   onSubmit({ value }: { value: Query }) {
     console.log(value);
-      // this.httpService.mysql_query_2(this.query).subscribe(results => {
-      //   this.mysqlResults = results;
-      // });
+      this.httpService.mysql_query_2(this.query).subscribe(results => {
+        this.mysqlResults = results;
+      });
       this.httpService.mongodb_query_2(this.query).subscribe(results => {
-        this.performance = results;
+        // this.performance = results;
+        this.mongodbResults = results;
       });
       this.httpService.neo4j_query_2(this.query).subscribe(results => {
-        this.performance = results;
+        // this.performance = results;
+        this.neo4jResults = results;
       });
     }
 }

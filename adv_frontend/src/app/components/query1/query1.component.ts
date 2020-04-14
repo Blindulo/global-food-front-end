@@ -14,12 +14,8 @@ export class Query1Component implements OnInit {
   mongodbResults: Result[];
   neo4jResults: Result[];
   query: Query = {
-    team: '',
-    data: '',
-    player: '',
-    performance: '',
-    conf: '',
-    time: '',
+    country: '',
+    market: '',
   }
   constructor(
     private httpService: HttpService,
@@ -30,9 +26,9 @@ export class Query1Component implements OnInit {
   onSubmit({ value }: { value: Query }) {
       this.httpService.mysql_query_1(this.query).subscribe(results => {
         this.mysqlResults = results;
-        for(var i in this.mysqlResults){
-          this.mysqlResults[i]["stDate"]=this.mysqlResults[i]["stDate"].substr(0,10);
-        } 
+        // for(var i in this.mysqlResults){
+        //   this.mysqlResults[i]["stDate"]=this.mysqlResults[i]["stDate"].substr(0,10);
+        // } 
       });
       this.httpService.mongodb_query_1(this.query).subscribe(results => {
         this.mongodbResults = results;
@@ -41,5 +37,9 @@ export class Query1Component implements OnInit {
         this.neo4jResults = results;
       });
     }
+
+    onCountrySelected(value:string){
+      console.log("the selected value is " + value);
+ }
 }
 

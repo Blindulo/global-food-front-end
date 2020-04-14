@@ -11,15 +11,12 @@ import { Router } from '@angular/router';
 })
 export class Query4Component implements OnInit {
   mysqlResults: Result[];
+  mysqlResults2: Result[];
   mongodbResults: Result[];
   neo4jResults: Result[];
   query: Query = {
-    team: '',
-    data: '',
-    player: '',
-    performance: 'Performance',
-    conf: '',
-    time: '',
+    country: '',
+    product_name: '',
   }
   constructor(
     private httpService: HttpService,
@@ -30,7 +27,11 @@ export class Query4Component implements OnInit {
   onSubmit({ value }: { value: Query }) {
       this.httpService.mysql_query_4(this.query).subscribe(results => {
         this.mysqlResults = results;
-        console.log(this.mysqlResults);
+        // console.log(this.mysqlResults);
+      });
+      this.httpService.mysql_query_6(this.query).subscribe(results => {
+        this.mysqlResults2 = results;
+        // console.log(this.mysqlResults);
       });
       this.httpService.mongodb_query_4(this.query).subscribe(results => {
         this.mongodbResults = results;

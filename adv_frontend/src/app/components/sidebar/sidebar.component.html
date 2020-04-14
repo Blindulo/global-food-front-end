@@ -3,26 +3,26 @@
     <div class="logo">
       <a  class="simple-text">
         <!-- <img src="../../../assets/img/icon.png" style="height:66px;"> -->
-        <img src="../../../assets/img/logo.png" style="height:100px;">
+        <img src="../../../assets/img/logo.png" style="height:80px;">
       </a>
     </div>
     <ul class="nav">
-      <li class="" (click)="changeColor0()">
+      <li (click)="changeColor0()">
         <a id="cs0" [routerLink]="['/query1']" class="nav-link">
           <!-- <i class="fa fa-list-ol"></i> -->
           
         <i class="fa fa-leaf"></i>
-        COMMODITY
+        FOOD
       </a>
         
       </li>
-      <li *ngIf="isSalesperson" class="" (click)="changeColor1()">
+      <li *ngIf="isSalesperson" (click)="changeColor1()">
         <a id="cs1" [routerLink]="['/query4']" class="nav-link">
           <i class="fa fa-clock-o"></i>
           TIME
         </a>
       </li>
-      <li *ngIf="isStoreManager" class="" (click)="changeColor2()">
+      <li *ngIf="isStoreManager" (click)="changeColor2()">
         <a id="cs2" [routerLink]="['/query2']" class="nav-link">
          
         <i class="fa fa-globe"></i>

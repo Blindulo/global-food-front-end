@@ -14,12 +14,8 @@ export class Query5Component implements OnInit {
   mongodbResults: Result[];
   neo4jResults: Result[];
   query: Query = {
-    team: '',
-    data: '',
-    player: '',
-    performance: '',
-    conf: '',
-    time: '',
+    country: '',
+    market: '',
   }
   constructor(
     private httpService: HttpService,
@@ -33,7 +29,7 @@ export class Query5Component implements OnInit {
       });
       this.httpService.mongodb_query_5(this.query).subscribe(results => {
         this.mongodbResults = results;
-        console.log(this.mongodbResults);
+        // console.log(this.mongodbResults);
       });
       this.httpService.neo4j_query_5(this.query).subscribe(results => {
         this.neo4jResults = results;

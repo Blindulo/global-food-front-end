@@ -26,37 +26,102 @@
             </div>
             <div class="col-md-4">
               <label for="name">Food</label>
-              <select class="form-control" name="opponent" #queryRank="ngModel" [(ngModel)]="query.opponent">
-                <option value="ATL">Atlanta Hawks</option>
-                <option value="BOS">Boston Celtics</option>
-                <option value="BKN">Brooklyn Nets</option>
-                <option value="CHA">Charlotte Hornets</option>
-                <option value="CHI">Chicago Bulls</option>
-                <option value="CLE">Cleveland Cavaliers</option>
-                <option value="DAL">Dallas Mavericks</option>
-                <option value="DEN">Denver Nuggets</option>
-                <option value="DET">Detroit Pistons</option>
-                <option value="GS">Golden State Warriors</option>
-                <option value="HOU">Houston Rockets</option>
-                <option value="IND">Indiana Pacers</option>
-                <option value="LAC">Los Angeles Clippers</option>
-                <option value="LAL">Los Angeles Lakers</option>
-                <option value="MEM">Memphis Grizzlies</option>
-                <option value="MIA">Miami Heat</option>
-                <option value="MIL">Milwaukee Bucks</option>
-                <option value="MIN">Minnesota Timberwolves</option>
-                <option value="NO">New Orleans Pelicans</option>
-                <option value="NY">New York Knicks</option>
-                <option value="OKC">Oklahoma City Thunder</option>
-                <option value="ORL">Orlando Magic</option>
-                <option value="PHI">Philadelphia 76ers</option>
-                <option value="PHO">Phoenix Suns</option>
-                <option value="POR">Portland Trail Blazers</option>
-                <option value="SAC">Sacramento Kings</option>
-                <option value="SA">San Antonio Spurs</option>
-                <option value="TOR">Toronto Raptors</option>
-                <option value="UTA">Utah Jazz</option>
-                <option value="WAS">Washington Wizards</option>
+              <select class="form-control" name="product_name" [(ngModel)]="query.product_name">
+                <option value="Apples">Apples</option>
+                <option value="Apples (red)">Apples (red)</option>
+                <option value="Bananas">Bananas</option>
+                <option value="Beans">Beans</option>
+                <option value="Beans (niebe)">Beans (niebe)</option>
+                <option value="Beans (red)">Beans (red)</option>
+                <option value="Beans (white)">Beans (white)</option>
+                <option value="Bread">Bread</option>
+                <option value="Bread (first grade flour)">Bread (first grade flour)</option>
+                <option value="Bread (high grade flour)">Bread (high grade flour)</option>
+                <option value="Bread (wheat)">Bread (wheat)</option>
+                <option value="Cabbage">Cabbage</option>
+                <option value="Carrots">Carrots</option>
+                <option value="Cassava flour">Cassava flour</option>
+                <option value="Cassava meal (gari)">Cassava meal (gari)</option>
+                <option value="Cassava (cossette)">Cassava (cossette)</option>
+                <option value="Cheese (dry)">Cheese (dry)</option>
+                <option value="Cucumbers (greenhouse)">Cucumbers (greenhouse)</option>
+                <option value="Eggs">Eggs</option>
+                <option value="Exchange rate">Exchange rate</option>
+                <option value="Fish (canned)">Fish (canned)</option>
+                <option value="Fish (fresh)">Fish (fresh)</option>
+                <option value="Fuel (diesel)">Fuel (diesel)</option>
+                <option value="Fuel (kerosene)">Fuel (kerosene)</option>
+                <option value="Fuel (petrol-gasoline)">Fuel (petrol-gasoline)</option>
+                <option value="Garlic">Garlic</option>
+                <option value="Groundnuts (shelled)">Groundnuts (shelled)</option>
+                <option value="Lentils">Lentils</option>
+                <option value="Lentils (masur)">Lentils (masur)</option>
+                <option value="Livestock (goat, medium-sized castrated male)">Livestock (goat, medium-sized castrated
+                  male)</option>
+                <option value="Livestock (sheep, medium-sized castrated male)">Livestock (sheep, medium-sized castrated
+                  male)</option>
+                <option value="Livestock (sheep, one-year-old alive female)">Livestock (sheep, one-year-old alive
+                  female)</option>
+                <option value="Maize">Maize</option>
+                <option value="Maize flour">Maize flour</option>
+                <option value="Maize (white)">Maize (white)</option>
+                <option value="Meat (beef)">Meat (beef)</option>
+                <option value="Meat (beef, chops with bones)">Meat (beef, chops with bones)</option>
+                <option value="Meat (camel)">Meat (camel)</option>
+                <option value="Meat (chicken)">Meat (chicken)</option>
+                <option value="Meat (chicken, whole)">Meat (chicken, whole)</option>
+                <option value="Meat (pork)">Meat (pork)</option>
+                <option value="Meat (pork, with fat)">Meat (pork, with fat)</option>
+                <option value="Milk">Milk</option>
+                <option value="Milk (camel)">Milk (camel)</option>
+                <option value="Millet">Millet</option>
+                <option value="Noodles (short)">Noodles (short)</option>
+                <option value="Oil">Oil</option>
+                <option value="Oil (groundnut)">Oil (groundnut)</option>
+                <option value="Oil (palm)">Oil (palm)</option>
+                <option value="Oil (vegetable)">Oil (vegetable)</option>
+                <option value="Onions">Onions</option>
+                <option value="Onions (red)">Onions (red)</option>
+                <option value="Onions (white)">Onions (white)</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Peas (yellow)">Peas (yellow)</option>
+                <option value="Potatoes">Potatoes</option>
+                <option value="Potatoes (black)">Potatoes (black)</option>
+                <option value="Potatoes (Dutch)">Potatoes (Dutch)</option>
+                <option value="Potatoes (Irish, imilla)">Potatoes (Irish, imilla)</option>
+                <option value="Rice">Rice</option>
+                <option value="Rice (carolina 2da)">Rice (carolina 2da)</option>
+                <option value="Rice (coarse)">Rice (coarse)</option>
+                <option value="Rice (estaquilla)">Rice (estaquilla)</option>
+                <option value="Rice (good quality)">Rice (good quality)</option>
+                <option value="Rice (high quality, local)">Rice (high quality, local)</option>
+                <option value="Rice (imported)">Rice (imported)</option>
+                <option value="Rice (imported, Tanzanian)">Rice (imported, Tanzanian)</option>
+                <option value="Rice (local)">Rice (local)</option>
+                <option value="Rice (long grain)">Rice (long grain)</option>
+                <option value="Rice (low quality)">Rice (low quality)</option>
+                <option value="Rice (low quality, local)">Rice (low quality, local)</option>
+                <option value="Rice (medium grain)">Rice (medium grain)</option>
+                <option value="Rice (mixed, low quality)">Rice (mixed, low quality)</option>
+                <option value="Rice (white)">Rice (white)</option>
+                <option value="Sesame">Sesame</option>
+                <option value="Sorghum">Sorghum</option>
+                <option value="Sorghum (berbere)">Sorghum (berbere)</option>
+                <option value="Sorghum (red)">Sorghum (red)</option>
+                <option value="Sorghum (white)">Sorghum (white)</option>
+                <option value="Soybeans">Soybeans</option>
+                <option value="Sugar">Sugar</option>
+                <option value="Sweet potatoes">Sweet potatoes</option>
+                <option value="Tea">Tea</option>
+                <option value="Tea (sahm)">Tea (sahm)</option>
+                <option value="Tomatoes">Tomatoes</option>
+                <option value="Wage (non-qualified labour)">Wage (non-qualified labour)</option>
+                <option value="Wage (non-qualified labour, non-agricultural)">Wage (non-qualified labour,
+                  non-agricultural)</option>
+                <option value="Wage (qualified labour)">Wage (qualified labour)</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Wheat flour">Wheat flour</option>
+
               </select>
             </div>
           </div>
@@ -87,9 +152,9 @@
               <th style="width:40%">Average Price</th>
             </thead>
             <tbody>
-              <tr >
-                <td>{{query.player}}</td>
-                <td>{{query.opponent}}</td>
+              <tr>
+                <td>{{mysqlResults.country}}</td>
+                <td>{{mysqlResults.avg_price}}</td>
               </tr>
             </tbody>
           </table>
@@ -113,9 +178,9 @@
 
             </thead>
             <tbody>
-              <tr >
-                  <td>{{query.player}}</td>
-                  <td>{{query.opponent}}</td>
+              <tr>
+                <td>{{mongodbResults.country}}</td>
+                <td>{{mongodbResults.avg_price}}</td>
               </tr>
             </tbody>
           </table>
@@ -137,8 +202,8 @@
             </thead>
             <tbody>
               <tr>
-                  <td>{{query.player}}</td>
-                  <td>{{query.opponent}}</td>
+                <td>{{neo4jResults.country}}</td>
+                <td>{{neo4jResults.avg_price}}</td>
               </tr>
             </tbody>
           </table>

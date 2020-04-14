@@ -16,12 +16,8 @@ export class Query6Component implements OnInit {
   neo4jResults: Result[];
   perfromance:any;
   query: Query = {
-    team: '',
-    data: '',
-    player: '',
-    performance: 'Performance',
-    conf: '',
-    time: '',
+    country: '',
+    product_name: ''
   }
   constructor(
     private httpService: HttpService,
@@ -32,9 +28,9 @@ export class Query6Component implements OnInit {
   onSubmit({ value }: { value: Query }) {
       this.httpService.mysql_query_6(this.query).subscribe(results => {
         this.mysqlResults = results;
-        for(var i in this.mysqlResults){
-          this.mysqlResults[i]["gmDate"]=this.mysqlResults[i]["gmDate"].substr(0,10);
-        } 
+        // for(var i in this.mysqlResults){
+        //   this.mysqlResults[i]["gmDate"]=this.mysqlResults[i]["gmDate"].substr(0,10);
+        // } 
       });
       this.httpService.mongodb_query_6(this.query).subscribe(results => {
         this.mongodbResults = results;

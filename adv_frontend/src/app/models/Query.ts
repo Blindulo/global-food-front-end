@@ -1,7 +1,7 @@
 export interface Query{
-    team?:String,
-    data?:String,
-    player?:String,
+    country?:String,
+    market?:String,
+    product_name?:String,
     performance?:String,
     conf?:String,
     time?:String,

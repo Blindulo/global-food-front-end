@@ -14,12 +14,7 @@ export class Query11Component implements OnInit {
   mongodbResults: Result[];
   neo4jResults: Result[];
   query: Query = {
-    team: '',
-    data: '',
-    player: '',
-    performance: '',
-    conf: '',
-    time: '',
+    product_name: ''
   }
   constructor(
     private httpService: HttpService,

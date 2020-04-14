@@ -21,7 +21,33 @@
 
             <div class="col-md-4">
               <label for="name">Country</label>
-              <select class="form-control" name="team" #queryRank="ngModel" [(ngModel)]="query.team">
+              <select class="form-control" name="country" #queryRank="ngModel" [(ngModel)]="query.country">
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Benin">Benin</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Central African Republic">Central African Republic</option>
+                <option value="Chad">Chad</option>
+                <option value="Colombia">Colombia</option>
+
+              </select>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <label for="name">Market</label>
+              <select class="form-control" name="market" #queryRank="ngModel" [(ngModel)]="query.market">
                 <option value="ATL">Atlanta Hawks</option>
                 <option value="BOS">Boston Celtics</option>
                 <option value="BKN">Brooklyn Nets</option>
@@ -54,55 +80,14 @@
                 <option value="WAS">Washington Wizards</option>
               </select>
             </div>
-           
           </div>
-          
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-        <label for="name">Market</label>
-        <select class="form-control" name="team" #queryRank="ngModel" [(ngModel)]="query.team">
-          <option value="ATL">Atlanta Hawks</option>
-          <option value="BOS">Boston Celtics</option>
-          <option value="BKN">Brooklyn Nets</option>
-          <option value="CHA">Charlotte Hornets</option>
-          <option value="CHI">Chicago Bulls</option>
-          <option value="CLE">Cleveland Cavaliers</option>
-          <option value="DAL">Dallas Mavericks</option>
-          <option value="DEN">Denver Nuggets</option>
-          <option value="DET">Detroit Pistons</option>
-          <option value="GS">Golden State Warriors</option>
-          <option value="HOU">Houston Rockets</option>
-          <option value="IND">Indiana Pacers</option>
-          <option value="LAC">Los Angeles Clippers</option>
-          <option value="LAL">Los Angeles Lakers</option>
-          <option value="MEM">Memphis Grizzlies</option>
-          <option value="MIA">Miami Heat</option>
-          <option value="MIL">Milwaukee Bucks</option>
-          <option value="MIN">Minnesota Timberwolves</option>
-          <option value="NO">New Orleans Pelicans</option>
-          <option value="NY">New York Knicks</option>
-          <option value="OKC">Oklahoma City Thunder</option>
-          <option value="ORL">Orlando Magic</option>
-          <option value="PHI">Philadelphia 76ers</option>
-          <option value="PHO">Phoenix Suns</option>
-          <option value="POR">Portland Trail Blazers</option>
-          <option value="SAC">Sacramento Kings</option>
-          <option value="SA">San Antonio Spurs</option>
-          <option value="TOR">Toronto Raptors</option>
-          <option value="UTA">Utah Jazz</option>
-          <option value="WAS">Washington Wizards</option>
-        </select>
-        </div>
-        </div>
         </div>
 
 
 
         <div class="col-md-2">
-            <input type="submit" value="Submit" class="btn btn-primary btn-block">
-          </div>
+          <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </div>
       </form>
     </div>
     <br>
@@ -124,8 +109,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let mysqlResult of mysqlResults">
-                <td>{{mysqlResult.teamAbbr}}</td>
-                <td>{{mysqlResult.rank}}</td>
+                <td>{{mysqlResult.product_name}}</td>
+                <td>{{mysqlResult.max_price}}</td>
               </tr>
             </tbody>
           </table>
@@ -147,8 +132,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let mongodbResult of mongodbResults">
-                <td>{{mongodbResult._id}}</td>
-                <td>{{mongodbResult.highestRank}}</td>
+                <td>{{mongodbResult.product_name}}</td>
+                <td>{{mongodbResult.max_price}}</td>
               </tr>
             </tbody>
           </table>
@@ -170,8 +155,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let neo4jResult of neo4jResults">
-                <td>{{neo4jResult.teamAbbr}}</td>
-                <td>{{neo4jResult.highestRank}}</td>
+                <td>{{neo4jResult.product_name}}</td>
+                <td>{{neo4jResult.max_price}}</td>
               </tr>
             </tbody>
           </table>
