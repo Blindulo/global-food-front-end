@@ -158,7 +158,7 @@
             <tbody>
               <tr *ngFor="let mysqlResult of mysqlResults">
                 <td>{{mysqlResult.country}}</td>
-                <td>{{mysqlResult.market}}</td>
+                <td>{{mysqlResult.market_type}}</td>
                 <td>{{mysqlResult.max_price}}</td>
               </tr>
             </tbody>
@@ -184,7 +184,7 @@
             <tbody>
               <tr *ngFor="let mongodbResult of mongodbResults">
                 <td>{{mongodbResult.country}}</td>
-                <td>{{mongodbResult.market}}</td>
+                <td>{{mongodbResult.market_type}}</td>
                 <td>{{mongodbResult.max_price}}</td>
               </tr>
             </tbody>
@@ -209,7 +209,7 @@
             <tbody>
               <tr *ngFor="let neo4jResult of neo4jResults">
                 <td>{{neo4jResult.country}}</td>
-                <td>{{neo4jResult.market}}</td>
+                <td>{{neo4jResult.market_type}}</td>
                 <td>{{neo4jResult.max_price}}</td>
               </tr>
             </tbody>
