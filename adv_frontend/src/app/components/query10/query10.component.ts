@@ -13,6 +13,7 @@ export class Query10Component implements OnInit {
   mysqlResults: Result[];
   mysqlResults2: Result[];
   mongodbResults: Result[];
+  mongodbResults2: Result[];
   neo4jResults: Result[];
   query: Query = {
     country: '',
@@ -28,7 +29,7 @@ export class Query10Component implements OnInit {
       this.httpService.mysql_query_10(this.query).subscribe(results => {
         this.mysqlResults = results;
       });
-      this.httpService.mysql_query_8(this.query).subscribe(results => {
+      this.httpService.mysql_query_10_view(this.query).subscribe(results => {
         this.mysqlResults2 = results;
       });
       this.httpService.mongodb_query_10(this.query).subscribe(results => {
@@ -38,5 +39,11 @@ export class Query10Component implements OnInit {
         this.neo4jResults = results;
       });
     }
+    onCountrySelected(value:string){
+      this.httpService.mongodb_query_9(value).subscribe(results => {
+        this.mongodbResults2 = results;
+      });
+      console.log("the selected value is " + value);
+ }
 }
 

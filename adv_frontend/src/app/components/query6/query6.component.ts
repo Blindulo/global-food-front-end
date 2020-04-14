@@ -13,6 +13,7 @@ import { query } from '@angular/core/src/render3';
 export class Query6Component implements OnInit {
   mysqlResults: Result[];
   mongodbResults: Result[];
+  mongodbResults2: Result[];
   neo4jResults: Result[];
   perfromance:any;
   query: Query = {
@@ -39,5 +40,11 @@ export class Query6Component implements OnInit {
         this.neo4jResults = results;
       });
     }
+    onCountrySelected(value:string){
+      this.httpService.mongodb_query_9(value).subscribe(results => {
+        this.mongodbResults2 = results;
+      });
+      console.log("the selected value is " + value);
+ }
 }
 

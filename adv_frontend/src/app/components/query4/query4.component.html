@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-4">
               <label for="name">Country</label>
-              <select class="form-control" name="country" #queryRank="ngModel" [(ngModel)]="query.country">
+              <select class="form-control" #Country  (change)='onCountrySelected(Country.value)' [(ngModel)]="query.country">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Algeria">Algeria</option>
                 <option value="Armenia">Armenia</option>
@@ -47,11 +47,7 @@
             <div class="col-md-4">
               <label for="name">Food</label>
               <select class="form-control" name="product_name" #queryRank="ngModel" [(ngModel)]="query.product_name">
-                <option value="PTS">Points</option>
-                <option value="TO">Turnover</option>
-                <option value="STL">Steal</option>
-                <option value="PF">Fouls</option>
-                <option value="DRB">Defensive rebounds</option>
+                <option *ngFor="let mongodbResult2 of mongodbResults2">{{mongodbResult2.product_name}}</option>
               </select>
             </div>
           </div>
@@ -175,7 +171,7 @@
 
             </thead>
             <tbody>
-              <tr *ngFor="let mysqlResult of mysqlResults">
+              <tr *ngFor="let mysqlResult2 of mysqlResults2">
 
                 <td>{{mysqlResult2.year}}</td>
                 <td>{{mysqlResult2.avg_price}}</td>

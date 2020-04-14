@@ -46,12 +46,7 @@
             <div class="col-md-4">
               <label for="name">Market</label>
               <select class="form-control" name="market"  [(ngModel)]="query.market">
-                <option value="playPTS">Points</option>
-                <option value="playAST">Assist</option>
-                <option value="play2PA">Two Point Attempts</option>
-                <option value="play2PM">Two Point Shots</option>
-                <option value="play3PA">Three Point Attempts</option>
-                <option value="play3PM">Three Point Shots</option>
+                <option *ngFor="let mongodbResult2 of mongodbResults2">{{mongodbResult2.market}}</option>
               </select>
             </div>
           </div>

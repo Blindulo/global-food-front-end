@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class Query1Component implements OnInit {
   mysqlResults: Result[];
   mongodbResults: Result[];
+  mongodbResults2: Result[];
   neo4jResults: Result[];
   query: Query = {
     country: '',
@@ -33,12 +34,16 @@ export class Query1Component implements OnInit {
       this.httpService.mongodb_query_1(this.query).subscribe(results => {
         this.mongodbResults = results;
       });
+      
       this.httpService.neo4j_query_1(this.query).subscribe(results => {
         this.neo4jResults = results;
       });
     }
 
     onCountrySelected(value:string){
+      this.httpService.mongodb_query_8(value).subscribe(results => {
+        this.mongodbResults2 = results;
+      });
       console.log("the selected value is " + value);
  }
 }
