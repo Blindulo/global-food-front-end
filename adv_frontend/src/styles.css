@@ -4387,9 +4387,6 @@ textarea.form-control {
     background-color: transparent;
   }
 
-  .navbar-fixed-top {
-    -webkit-backface-visibility: hidden;
-  }
 
   #bodyClick {
     height: 100%;

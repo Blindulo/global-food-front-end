@@ -2673,8 +2673,7 @@ textarea.form-control {
     .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
       background-color: transparent; }
 
-  .navbar-fixed-top {
-    -webkit-backface-visibility: hidden; }
+
 
   #bodyClick {
     height: 100%;
