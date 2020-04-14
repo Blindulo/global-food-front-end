@@ -25,27 +25,33 @@
           <div class="form-group">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Search Team by Rank</h4>
+                    <h4>Search Food Lowest Price in All Markets</h4>
                   </div>
               <div class="col-md-4">
-                <label for="name">Player Name</label>
+                 <label for="name">Food</label>
+                <select class="form-control" name="time" #queryRank="ngModel" [(ngModel)]="query.time">
+                    <option value="week">Weekly Points</option>
+                    <option value="month">Monthly Points</option>
+                </select>
+            <!--     <label for="name">Player Name</label>
                 <input type="text" class="form-control" name="player" #salespersonName="ngModel"
-                  [(ngModel)]="query.player">
+                  [(ngModel)]="query.player"> -->
               </div>
+            
             </div>
           </div>
   
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="row">
               <div class="col-md-4">
-                <label for="name">Performance</label>
+                <label for="name">Food</label>
                 <select class="form-control" name="time" #queryRank="ngModel" [(ngModel)]="query.time">
                     <option value="week">Weekly Points</option>
                     <option value="month">Monthly Points</option>
                 </select>
               </div>
             </div>
-          </div>
+          </div> -->
   
           <div class="col-md-2">
             <input type="submit" value="Submit" class="btn btn-primary btn-block">
@@ -61,17 +67,19 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MySQL</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Lowest Price in Markets</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                <th style="width:25%">Player</th>
-                <th style="width:25%">Average Points</th>
+                <th style="width:20%">Country</th>
+                <th style="width:40%">Market</th>
+                <th style="width:40%">Lowest Price</th>
               </thead>
               <tbody>
                 <tr *ngFor="let mysqlResult of mysqlResults">
                   <td>{{query.player}}</td>
+                  <td>{{mysqlResult.avgPTS}}</td>
                   <td>{{mysqlResult.avgPTS}}</td>
                 </tr>
               </tbody>
@@ -84,18 +92,20 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MongoDB</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Lowest Price in Markets</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                  <th style="width:25%">Player</th>
-                  <th style="width:25%">Average Points</th>
+                  <th style="width:20%">Country</th>
+                  <th style="width:40%">Market</th>
+                  <th style="width:40%">Lowest Price</th>
   
               </thead>
               <tbody>
                 <tr *ngFor="let mongodbResult of mongodbResults">
                     <td>{{query.player}}</td>
+                    <td>{{mongodbResult.avgPTS}}</td>
                     <td>{{mongodbResult.avgPTS}}</td>
                 </tr>
               </tbody>
@@ -108,17 +118,19 @@
         <div class="card">
           <div class="header">
             <h4 class="title">Neo4j</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Lowest Price in Markets</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                  <th style="width:25%">Player</th>
-                  <th style="width:25%">Average Points</th>
+                  <th style="width:20%">Country</th>
+                  <th style="width:40%">Market</th>
+                  <th style="width:40%">Lowest Price</th>
               </thead>
               <tbody>
                 <tr *ngFor="let neo4jResult of neo4jResults"> 
                     <td>{{query.player}}</td>
+                    <td>{{neo4jResult.avgPTS}}</td>
                     <td>{{neo4jResult.avgPTS}}</td>
                 </tr>
               </tbody>

@@ -23,10 +23,10 @@
           <div class="form-group">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Search Team by Rank</h4>
+                    <h4>Search Food Average Price in All Localities</h4>
                   </div>
               <div class="col-md-4">
-                <label for="name">Player Name</label>
+                <label for="name">Country</label>
                 <input type="text" class="form-control" name="player" #salespersonName="ngModel"
                   [(ngModel)]="query.player">
               </div>
@@ -36,7 +36,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-4">
-                <label for="name">Performance</label>
+                <label for="name">Food</label>
                 <select class="form-control" name="performance" #queryRank="ngModel" [(ngModel)]="query.performance">
                   <option value="playPTS">Points</option>
                   <option value="playAST">Assist</option>
@@ -63,22 +63,18 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MySQL</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Food Average Price in Localities</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                <th style="width:25%">Date</th>
-                <th style="width:25%">Player</th>
-                <th style="width:25%">Opponent</th>
-                <th style="width:25%">Max</th>
+                <th style="width:60%">Locality</th>
+                <th style="width:40%">Average Price</th>
               </thead>
               <tbody>
                 <tr *ngFor="let mysqlResult of mysqlResults">
-                  <td>{{mysqlResult.gmDate}}</td>
-                  <td>{{query.player}}</td>
-                  <td>{{mysqlResult.opptAbbr}}</td>
-                  <td>{{mysqlResult.max}}</td>
+                  <!-- <td>{{mysqlResult.gmDate}}</td>
+                  <td>{{query.player}}</td> -->
                 </tr>
               </tbody>
             </table>
@@ -90,14 +86,15 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MongoDB</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Food Average Price in Localities</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                  <th style="width:25%">Player</th>
-                  <th style="width:25%">Max {{query.performance}}</th>
-  
+                  <!-- <th style="width:25%">Player</th>
+                  <th style="width:25%">Max {{query.performance}}</th> -->
+                  <th style="width:60%">Locality</th>
+                  <th style="width:40%">Average Price</th>
               </thead>
               <tbody>
                 <tr *ngFor="let mongodbResult of mongodbResults">
@@ -114,22 +111,24 @@
         <div class="card">
           <div class="header">
             <h4 class="title">Neo4j</h4>
-            <p class="category">Team by rank</p>
+            <p class="category">Food Average Price in Localities</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                  <th style="width:25%">Date</th>
+                  <!-- <th style="width:25%">Date</th>
                   <th style="width:25%">Player</th>
                   <th style="width:25%">Opponent</th>
-                  <th style="width:25%">Max</th>
+                  <th style="width:25%">Max</th> -->
+                  <th style="width:60%">Locality</th>
+                <th style="width:40%">Average Price</th>
               </thead>
               <tbody>
                 <tr *ngFor="let neo4jResult of neo4jResults"> 
                     <td>{{neo4jResult.gmDate}}</td>
                     <td>{{query.player}}</td>
-                    <td>{{neo4jResult.opptAbbr}}</td>
-                    <td>{{neo4jResult.max}}</td>
+                    <!-- <td>{{neo4jResult.opptAbbr}}</td>
+                    <td>{{neo4jResult.max}}</td> -->
                 </tr>
               </tbody>
             </table>

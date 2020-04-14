@@ -3,10 +3,10 @@
       <div class="col-md-12">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/query1']">Countries</a>
+            <a class="nav-link active" [routerLink]="['/query1']">Lowest Price</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " [routerLink]="['/query5']">Localities</a>
+            <a class="nav-link " [routerLink]="['/query5']">Highest Price</a>
           </li>
         </ul>
       </div>
@@ -16,10 +16,10 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-12">
-                <h4>Search Food Average Price in All Countries</h4>
+                <h4>Search Food Lowest Prices in Markets</h4>
               </div>
               <div class="col-md-4">
-                <label for="name">Food</label>
+                <label for="name">Country</label>
                 <select class="form-control" name="rank" #queryRank="ngModel" [(ngModel)]="query.rank">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -38,7 +38,22 @@
                   <option value="15">15</option>
                 </select>
               </div>
-              
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="name">Market</label>
+                <select class="form-control" name="performance" #queryRank="ngModel" [(ngModel)]="query.performance">
+                  <option value="playPTS">Points</option>
+                  <option value="playAST">Assist</option>
+                  <option value="play2PA">Two Point Attempts</option>
+                  <option value="play2PM">Two Point Shots</option>
+                  <option value="play3PA">Three Point Attempts</option>
+                  <option value="play3PM">Three Point Shots</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="col-md-2">
@@ -55,13 +70,13 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MySQL</h4>
-            <p class="category">Price by rank</p>
+            <p class="category">Lowest Prices in All Markets</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
               <thead>
-                <th style="width:60%">Country</th>
-                <th style="width:40%">Average Price</th>
+                <th style="width:60%">Food</th>
+                <th style="width:40%">Lowest Price</th>
   
               </thead>
               <tbody>
@@ -80,7 +95,7 @@
         <div class="card">
           <div class="header">
             <h4 class="title">MongoDB</h4>
-            <p class="category">Price by rank</p>
+            <p class="category">Lowest Prices in Markets</p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-striped">
@@ -88,8 +103,8 @@
                 <!-- <th style="width:40%">Date</th>
                 <th style="width:30%">Team</th>
                 <th style="width:30%">Rank</th> -->
-                <th style="width:60%">Country</th>
-                <th style="width:40%">Average Price</th>
+                <th style="width:60%">Food</th>
+                <th style="width:40%">Lowest Price</th>
   
               </thead>
               <tbody>
@@ -108,7 +123,7 @@
               <div class="card">
                 <div class="header">
                   <h4 class="title">Neo4j</h4>
-                  <p class="category">Price by rank</p>
+                  <p class="category">Lowest Prices in Markets</p>
                 </div>
                 <div class="content table-responsive table-full-width">
                   <table class="table table-striped">
@@ -116,8 +131,8 @@
                       <!-- <th style="width:40%">Date</th>
                       <th style="width:30%">Team</th>
                       <th style="width:30%">Rank</th> -->
-                      <th style="width:60%">Country</th>
-                      <th style="width:40%">Average Price</th>
+                      <th style="width:60%">Food</th>
+                      <th style="width:40%">Lowest Price</th>
         
                     </thead>
                     <tbody>

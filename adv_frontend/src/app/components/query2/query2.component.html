@@ -22,10 +22,10 @@
         <div class="form-group">
           <div class="row">
             <div class="col-md-12">
-              <h4>Search Team by Rank</h4>
+              <h4>Search Food Average Price in All Countries</h4>
             </div>
             <div class="col-md-4">
-              <label for="name">Opponent</label>
+              <label for="name">Food</label>
               <select class="form-control" name="opponent" #queryRank="ngModel" [(ngModel)]="query.opponent">
                 <option value="ATL">Atlanta Hawks</option>
                 <option value="BOS">Boston Celtics</option>
@@ -62,48 +62,7 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-              <label for="name">Player Name</label>
-              <input type="text" class="form-control" name="player" #salespersonName="ngModel"
-                [(ngModel)]="query.player">
-            </div>
-          </div>
-        </div>
 
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-              <label for="name">Result</label>
-              <select class="form-control" name="result" #queryRank="ngModel" [(ngModel)]="query.result">
-                <option value="Win">Win</option>
-                <option value="Loss">Loss</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-              <label for="name">Performance</label>
-              <select class="form-control" name="performance" #queryRank="ngModel" [(ngModel)]="query.performance">
-                <option value="playPTS">Points</option>
-                <option value="playAST">Assist</option>
-                <option value="playTO">Turnover</option>
-                <option value="playBLK">Block</option>
-                <option value="playPF">Fouls</option>
-                <option value="play2PA">Two Point Attempts</option>
-                <option value="play2PM">Two Point Shots</option>
-                <option value="play3PA">Three Point Attempts</option>
-                <option value="play3PM">Three Point Shots</option>
-                <option value="playDRB">Defensive rebounds</option>
-              </select>
-            </div>
-          </div>
-        </div>
 
         <div class="col-md-2">
           <input type="submit" value="Submit" class="btn btn-primary btn-block">
@@ -119,22 +78,18 @@
       <div class="card">
         <div class="header">
           <h4 class="title">MySQL</h4>
-          <p class="category">Team by rank</p>
+          <p class="category">Food Average Price in Countries</p>
         </div>
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-              <th style="width:25%">Player</th>
-              <th style="width:25%">Opponent</th>
-              <th style="width:25%">Result</th>
-              <th style="width:25%">{{query.performance}}</th>
+              <th style="width:60%">Country</th>
+              <th style="width:40%">Average Price</th>
             </thead>
             <tbody>
               <tr >
                 <td>{{query.player}}</td>
                 <td>{{query.opponent}}</td>
-                <td>{{query.result}}</td>
-                <td>{{performance}}</td>
               </tr>
             </tbody>
           </table>
@@ -146,23 +101,21 @@
       <div class="card">
         <div class="header">
           <h4 class="title">MongoDB</h4>
-          <p class="category">Team by rank</p>
+          <p class="category">Food Average Price in Countries</p>
         </div>
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-              <th style="width:25%">Player</th>
-              <th style="width:25%">Opponent</th>
-              <th style="width:25%">Result</th>
-              <th style="width:25%">{{query.performance}}</th>
+              <!-- <th style="width:25%">Player</th>
+              <th style="width:25%">Opponent</th> -->
+              <th style="width:60%">Country</th>
+              <th style="width:40%">Average Price</th>
 
             </thead>
             <tbody>
               <tr >
                   <td>{{query.player}}</td>
                   <td>{{query.opponent}}</td>
-                  <td>{{query.result}}</td>
-                  <td>{{performance}}</td>
               </tr>
             </tbody>
           </table>
@@ -174,22 +127,18 @@
       <div class="card">
         <div class="header">
           <h4 class="title">Neo4j</h4>
-          <p class="category">Team by rank</p>
+          <p class="category">Food Average Price in Countries</p>
         </div>
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-              <th style="width:25%">Player</th>
-              <th style="width:25%">Opponent</th>
-              <th style="width:25%">Result</th>
-              <th style="width:25%">{{query.performance}}</th>
+              <th style="width:60%">Country</th>
+              <th style="width:40%">Average Price</th>
             </thead>
             <tbody>
               <tr>
                   <td>{{query.player}}</td>
                   <td>{{query.opponent}}</td>
-                  <td>{{query.result}}</td>
-                  <td>{{performance}}</td>
               </tr>
             </tbody>
           </table>

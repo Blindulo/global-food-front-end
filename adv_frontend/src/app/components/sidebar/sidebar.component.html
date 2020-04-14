@@ -10,9 +10,11 @@
       <li class="" (click)="changeColor0()">
         <a id="cs0" [routerLink]="['/query1']" class="nav-link">
           <!-- <i class="fa fa-list-ol"></i> -->
-          <i class="fa fa-globe"></i>
-          PLACE
-        </a>
+          
+        <i class="fa fa-leaf"></i>
+        COMMODITY
+      </a>
+        
       </li>
       <li *ngIf="isSalesperson" class="" (click)="changeColor1()">
         <a id="cs1" [routerLink]="['/query4']" class="nav-link">
@@ -22,8 +24,9 @@
       </li>
       <li *ngIf="isStoreManager" class="" (click)="changeColor2()">
         <a id="cs2" [routerLink]="['/query2']" class="nav-link">
-          <i class="fa fa-leaf"></i>
-          COMMODITY
+         
+        <i class="fa fa-globe"></i>
+          PLACE
         </a>
       </li>
 

@@ -3,10 +3,10 @@
     <div class="col-md-12">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/query4']">Performance</a>
+          <a class="nav-link active" [routerLink]="['/query4']">Years</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " [routerLink]="['/query10']">Average OT Points</a>
+          <a class="nav-link " [routerLink]="['/query10']">Months</a>
         </li>
       </ul>
     </div>
@@ -16,10 +16,10 @@
         <div class="form-group">
           <div class="row">
             <div class="col-md-12">
-              <h4>Search Team by Rank</h4>
+              <h4>Search Food Average Price in All Years</h4>
             </div>
             <div class="col-md-4">
-              <label for="name">Team</label>
+              <label for="name">Country</label>
               <select class="form-control" name="team" #queryRank="ngModel" [(ngModel)]="query.team">
                 <option value="ATL">Atlanta Hawks</option>
                 <option value="BOS">Boston Celtics</option>
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-
+<!-- 
         <div class="form-group">
           <div class="row">
             <div class="col-md-4">
@@ -63,12 +63,12 @@
               <input type="text" class="form-control" name="date" #salespersonName="ngModel" [(ngModel)]="query.date">
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
           <div class="row">
             <div class="col-md-4">
-              <label for="name">Performance</label>
+              <label for="name">Food</label>
               <select class="form-control" name="performance" #queryRank="ngModel" [(ngModel)]="query.performance">
                 <option value="PTS">Points</option>
                 <option value="TO">Turnover</option>
@@ -84,21 +84,23 @@
         </div>
       </form>
     </div>
-    <!-- MySQL -->
+    <!-- MySQL Without View-->
     <div class="col-md-4 super-container">
       <div class="card">
         <div class="header">
           <h4 class="title">MySQL</h4>
-          <p class="category">Team by rank</p>
+          <p class="category">Speed Without View:</p>
         </div>
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-              <th style="width:28%">Date</th>
+              <!-- <th style="width:28%">Date</th>
               <th style="width:18%">Team</th>
               <th style="width:18%">Result</th>
               <th style="width:18%">Opponent</th>
-              <th style="width:18%">{{query.performance}}</th>
+              <th style="width:18%">{{query.performance}}</th> -->
+              <th style="width:50%">Year</th>
+              <th style="width:50%">Average Price</th>
 
             </thead>
             <tbody>
@@ -113,21 +115,25 @@
         </div>
       </div>
     </div>
+    
+    
     <!-- MomgoDB -->
     <div class="col-md-4 super-container">
       <div class="card">
         <div class="header">
           <h4 class="title">MongoDB</h4>
-          <p class="category">Team by rank</p>
+          <p class="category">Food Average Price in All Year</p>
         </div>
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-              <th style="width:28%">Date</th>
+              <!-- <th style="width:28%">Date</th>
               <th style="width:18%">Team</th>
               <th style="width:18%">Result</th>
               <th style="width:18%">Opponent</th>
-              <th style="width:18%">{{query.performance}}</th>
+              <th style="width:18%">{{query.performance}}</th> -->
+              <th style="width:50%">Year</th>
+              <th style="width:50%">Average Price</th>
             </thead>
             <tbody>
               <tr *ngFor="let mongodbResult of mongodbResults">
@@ -145,16 +151,18 @@
       <div class="card">
         <div class="header">
           <h4 class="title">Neo4j</h4>
-          <p class="category">Team by rank</p>
+          <p class="category">Food Average Price in All Year</p>
         </div>
         <div class="content table-responsive table-full-width">
           <table class="table table-striped">
             <thead>
-              <th style="width:28%">Date</th>
+              <!-- <th style="width:28%">Date</th>
               <th style="width:18%">Team</th>
               <th style="width:18%">Result</th>
               <th style="width:18%">Opponent</th>
-              <th style="width:18%">{{query.performance}}</th>
+              <th style="width:18%">{{query.performance}}</th> -->
+              <th style="width:50%">Year</th>
+              <th style="width:50%">Average Price</th>
             </thead>
             <tbody>
               <tr *ngFor="let neo4jResult of neo4jResults">
@@ -167,5 +175,40 @@
         </div>
       </div>
     </div>
+
+    <!-- MySQL View-->
+    <div class="col-md-4 super-container">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">MySQL</h4>
+          <p class="category">Speed With View:</p>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+              <!-- <th style="width:28%">Date</th>
+              <th style="width:18%">Team</th>
+              <th style="width:18%">Result</th>
+              <th style="width:18%">Opponent</th>
+              <th style="width:18%">{{query.performance}}</th> -->
+              <th style="width:50%">Year</th>
+              <th style="width:50%">Average Price</th>
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let mysqlResult of mysqlResults">
+                <!-- <td>{{query.date}}</td>
+                <td>{{mysqlResult.teamAbbr}}</td>
+                <td>{{mysqlResult.teamRslt}}</td>
+                <td>{{mysqlResult[3]}}</td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </div>
